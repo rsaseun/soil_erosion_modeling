@@ -10,7 +10,3 @@ Raji, S.A., Akintuyi, A. O., Wunude, E. & Fashoto, B. (2021). Spatial Statistica
 
 Full paper:
 Raji, S.A., Akintuyi, A. O., Wunude, E. & Fashoto, B. (2022). A Spatial Statistical Approach to Modeling of Gully Erosion in the Anambra Basin. Under review at journal African Earth Sciences.
-
-
-
-Spatial Modeling of Gully Erosion Development in the Anambra Basin using Multinomial 
