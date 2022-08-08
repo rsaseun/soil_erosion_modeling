@@ -42,15 +42,26 @@ sink()
 predict(erosionmodel)
 print(predict)
 
+sink("predict.erosionmodel.txt")
+predict(erosionmodel)
+sink()
+
+
 ##Examine the probability of the prediction
 
 predict(erosionmodel, GLock, type = "prob")
+
+
 summary(prob)
 
 #Estimate computational mismatches and errors
 
 ##Confusion matrix
+
+sink("confusionMatrix.txt")
 cm <- table(predict(erosionmodel), GLock$GullyF)
+sink()
+
 print(cm)
 plot(cm)
 
@@ -61,3 +72,8 @@ p <- (1 - pnorm(abs(z), 0, 1)) * 2
 p
 plot(p)
 
+sink("2-tailed z test.txt")
+z <- summary(erosionmodel)$coefficients/summary(erosionmodel)$standard.errors
+p <- (1 - pnorm(abs(z), 0, 1)) * 2
+p
+sink()
