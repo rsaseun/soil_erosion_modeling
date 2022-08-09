@@ -1,23 +1,24 @@
 #Data preparation
-GLock <- read_excel("~/Research 2021/Tropical Geomorphometry Study Group/Paper Two/Gully parameters.xlsx", 
+library(readxl)
+GLoc <- read_excel("~/Research 2021/Tropical Geomorphometry Study Group/Paper Two/Gully parameters.xlsx", 
                     sheet = "Sheet1")
-View(GLock)
-str(GLock)
-summary(GLock)
-attach(GLock)
+View(GLoc)
+str(GLoc)
+summary(GLoc)
+attach(GLoc)
 
 #Graphs (Histograms)
-xtabs(~order(GLock))
-names(GLock)
+xtabs(~order(GLoc))
+names(GLoc)
 
-##Make the independent variable a factor
+##Make the independent variable a factor of the gully occurrence 
 
-GLock$GullyF <- factor(GLock$Gully)
+GLoc$GullyF <- factor(GLoc$Gully)
 
-##Identify the reference level among the independent variable (note: "No gully" 
-##was used as the reference which was denoted "0")
+##Identify the reference level among the independent variable (note: "Fully gully" 
+##was used as the reference which was denoted "4")
  
-GLock$out <- relevel(GLock$GullyF, ref = "0")
+GLoc$out <- relevel(GLoc$GullyF, ref = "4")
 
 #Develop Multinomial Logistics Regression Model
 
@@ -28,11 +29,11 @@ library(nnet)
 erosionmodel <- multinom(out~Aspect + Br + Cr + Curvature + Dd + ElongIndex + 
                            FlowDirect + Geology + Hillshade + NDVI + Orographic + 
                            Population + Rainfall + Road + Slope + Soil + Temp + 
-                           Built_up + Elevation + LULC, data = GLock)
+                           Built_up + Elevation + LULC, data = GLoc)
 
 ##View the MLR outcome and save as output
 
-sink("MLR_model.txt")
+sink("MLR_modelFinal.txt")
 summary(erosionmodel)
 sink()
 
@@ -42,14 +43,14 @@ sink()
 predict(erosionmodel)
 print(predict)
 
-sink("predict.erosionmodel.txt")
+sink("predict.erosionmodelFinal.txt")
 predict(erosionmodel)
 sink()
 
 
 ##Examine the probability of the prediction
 
-predict(erosionmodel, GLock, type = "prob")
+predict(erosionmodel, GLoc, type = "prob")
 
 
 summary(prob)
@@ -58,8 +59,8 @@ summary(prob)
 
 ##Confusion matrix
 
-sink("confusionMatrix.txt")
-cm <- table(predict(erosionmodel), GLock$GullyF)
+sink("confusionMatrixFinal.txt")
+cm <- table(predict(erosionmodel), GLoc$GullyF)
 sink()
 
 print(cm)
@@ -72,7 +73,7 @@ p <- (1 - pnorm(abs(z), 0, 1)) * 2
 p
 plot(p)
 
-sink("2-tailed z test.txt")
+sink("2-tailed z testFinal.txt")
 z <- summary(erosionmodel)$coefficients/summary(erosionmodel)$standard.errors
 p <- (1 - pnorm(abs(z), 0, 1)) * 2
 p
