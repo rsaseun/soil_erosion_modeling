@@ -1,0 +1,41 @@
+
+Call:
+stats::lm(formula = Gully ~ Aspect + Br + Cr + Curvature + Dd + 
+    ElongIndex + FlowDirect + Geology + Hillshade + NDVI + Orographic + 
+    Population + Rainfall + Road + Slope + Soil + Temp + Built_up + 
+    Elevation + LULC, data = GLoc)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.0528 -0.9684 -0.2620  1.1089  2.7205 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -1.056e+01  9.892e+00  -1.067 0.286344    
+Aspect       1.543e-04  4.771e-04   0.323 0.746527    
+Br          -1.189e-02  7.264e-03  -1.637 0.102180    
+Cr           2.107e+00  1.595e+00   1.322 0.186824    
+Curvature   -2.965e-02  1.288e-01  -0.230 0.817942    
+Dd           5.004e-02  1.029e-01   0.486 0.627036    
+ElongIndex  -1.135e+00  3.041e-01  -3.731 0.000209 ***
+FlowDirect  -5.205e-04  1.452e-03  -0.358 0.720198    
+Geology     -4.283e-02  4.726e-02  -0.906 0.365219    
+Hillshade    1.326e-03  5.127e-03   0.259 0.795975    
+NDVI         2.637e-03  2.749e-03   0.959 0.337854    
+Orographic   1.940e-02  3.440e-03   5.640 2.62e-08 ***
+Population  -5.673e-04  3.707e-04  -1.530 0.126448    
+Rainfall    -7.251e-04  1.530e-03  -0.474 0.635721    
+Road         6.806e-02  2.025e-01   0.336 0.736955    
+Slope        3.813e-03  8.337e-03   0.457 0.647602    
+Soil        -2.054e-02  1.939e-01  -0.106 0.915669    
+Temp         4.541e-01  2.720e-01   1.669 0.095599 .  
+Built_up     5.616e-02  6.473e-02   0.868 0.385970    
+Elevation   -1.319e-03  6.833e-04  -1.930 0.054110 .  
+LULC        -9.975e-02  4.336e-02  -2.301 0.021745 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.178 on 605 degrees of freedom
+Multiple R-squared:  0.1575,	Adjusted R-squared:  0.1296 
+F-statistic: 5.655 on 20 and 605 DF,  p-value: 1.464e-13
+

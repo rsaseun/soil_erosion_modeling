@@ -9,6 +9,7 @@ library(patchwork)
 GClass <- read_excel("~/Research 2021/Tropical Geomorphometry Study Group/Paper Two/Gully parameters.xlsx", 
                      sheet = "Sheet6")
 
+View(GClass)
 str(GClass)
 GClass$GullyClass = as.factor(GClass$GullyClass)
 
