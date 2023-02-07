@@ -9,4 +9,4 @@ Please cite this work as part of the attribution:
 Raji, S.A., Akintuyi, A. O., Wunude, E. & Fashoto, B. (2021). Spatial Statistical Modeling of Geomorphometry and Drivers of Gully Erosion of the Sedimentary Basin of Southeastern Nigeria. Poster presented at the 2021 AGU Fall Meeting, New Orleans Louisiana. https://www.essoar.org/doi/abs/10.1002/essoar.10508947.1 
 
 Full paper:
-Raji, S.A., Akintuyi, A. O., Wunude, E. & Fashoto, B. (2022). A Spatial Statistical Approach to Modeling of Gully Erosion in the Anambra Basin. Under review at Journal of African Earth Sciences.
+Raji, S.A., Akintuyi, A. O., Wunude, E. & Fashoto, B. (2022). A Spatial Statistical Approach to Modeling of Gully Erosion in the Anambra Basin. Under review at Ecological Informatics.
